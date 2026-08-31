@@ -1,0 +1,74 @@
+[
+  {
+    "ContainingType": "MyProjectsNew.Controller.FirstController",
+    "Method": "AddPersonnelWelfare",
+    "RelativePath": "api/First",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CustomerName",
+        "Type": "MyProjectsNew.Entities.CustomerPersonnelNames",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.CustomerPersonnelNames, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyProjectsNew.Controller.FirstController",
+    "Method": "GetGoodsName",
+    "RelativePath": "api/First/{id}/getGoodsName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.Goods, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyProjectsNew.Controller.FirstController",
+    "Method": "GetAllPersonnel",
+    "RelativePath": "api/First/getCustomerName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.CustomerName, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
