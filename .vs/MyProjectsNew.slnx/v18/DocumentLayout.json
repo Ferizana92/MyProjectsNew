@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|c:\\users\\f.motevalian\\source\\repos\\myprojectsnew\\myprojectsnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|solutionrelative:myprojectsnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|c:\\users\\f.motevalian\\source\\repos\\myprojectsnew\\myprojectsnew\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|solutionrelative:myprojectsnew\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|c:\\users\\f.motevalian\\source\\repos\\myprojectsnew\\myprojectsnew\\controllers\\goodscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|solutionrelative:myprojectsnew\\controllers\\goodscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|c:\\users\\f.motevalian\\source\\repos\\myprojectsnew\\myprojectsnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81D77D6-84F7-7E76-63D5-31C1F8B087CB}|MyProjectsNew\\MyProjectsNew.csproj|solutionrelative:myprojectsnew\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Program.cs",
               "RelativeDocumentMoniker": "MyProjectsNew\\Program.cs",
-              "ToolTip": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Program.cs*",
-              "RelativeToolTip": "MyProjectsNew\\Program.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwCcAAAArAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Program.cs",
+              "RelativeToolTip": "MyProjectsNew\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-26T06:34:46.056Z",
               "IsPinned": true,
@@ -53,12 +57,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GoodsController.cs",
+              "DocumentMoniker": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Controllers\\GoodsController.cs",
+              "RelativeDocumentMoniker": "MyProjectsNew\\Controllers\\GoodsController.cs",
+              "ToolTip": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Controllers\\GoodsController.cs*",
+              "RelativeToolTip": "MyProjectsNew\\Controllers\\GoodsController.cs*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwD4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T12:12:03.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "MyProjectsNew\\Controllers\\CustomerController.cs",
-              "ToolTip": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Controllers\\CustomerController.cs",
-              "RelativeToolTip": "MyProjectsNew\\Controllers\\CustomerController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\f.motevalian\\source\\repos\\MyProjectsNew\\MyProjectsNew\\Controllers\\CustomerController.cs*",
+              "RelativeToolTip": "MyProjectsNew\\Controllers\\CustomerController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-01T11:20:31.999Z",
               "EditorCaption": ""

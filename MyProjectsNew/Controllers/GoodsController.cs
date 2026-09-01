@@ -13,23 +13,33 @@ namespace MyProjectsNew.Controllers
     public class GoodsController : ControllerBase
     {
         private readonly DataContext _db;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <returns>Constructor for GoodsController</returns>
         public GoodsController(DataContext db)
         {
             _db = db;
         }
+        /// <summary>
+        /// Get the Goods Name and Show it Here
+        /// </summary>
+        /// <returns>if succeed return Goods names</returns>
         [HttpGet]
-        [Route("{id}/getGoodsName")]
+        [Route("getGoodsName")]
         public async Task<ActionResult<List<Goods>>> GetGoodsName()
         {
             var Goodsname = await _db.Goods.ToListAsync();
             return Ok(Goodsname);
         }
-        
+        /// <summary>
+        /// Post the Goods and Show it Here
+        /// </summary>
+        /// <returns>CreateCustomerName</returns>
         [HttpPost]
-        [Route("{id}")]
+        [Route("CreateGoodsName")]
 
-        public async Task<ActionResult<List<CustomerPersonnelNames>>> CreateGoodsName([FromBody] GoodsName GoodsNameModel)
+        public async Task<ActionResult<List<GoodsName>>> CreateGoodsName([FromBody] GoodsName GoodsNameModel)
         {
             var command = new GoodsName
             {
@@ -45,9 +55,13 @@ namespace MyProjectsNew.Controllers
 
 
         }
+        /// <summary>
+        /// Update the Goods and Show it Here
+        /// </summary>
+        /// <returns>UpdateGoodsName</returns>
         [HttpPut]
-        [Route("{id}")]
-        public async Task<ActionResult<List<CustomerPersonnelNames>>> UpdateGoodsName([FromBody] GoodsName GoodsNameModel)
+        [Route("UpdateGoodsName")]
+        public async Task<ActionResult<List<GoodsName>>> UpdateGoodsName([FromBody] GoodsName GoodsNameModel)
         {
             var command = new GoodsName
             {
@@ -61,7 +75,10 @@ namespace MyProjectsNew.Controllers
             return Ok(command);
 
         }
-
+        /// <summary>
+        /// Delete the Goods and Show it Here
+        /// </summary>
+        /// <returns>DeleteGoodsName</returns>
         [HttpDelete]
         public async Task<ActionResult<List<GoodsName>>> DeleteGoodsName([FromRoute][Required] long id) //yani chi Required?
         {

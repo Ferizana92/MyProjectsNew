@@ -4,11 +4,65 @@
         <name>MyProjectsNew</name>
     </assembly>
     <members>
+        <member name="M:MyProjectsNew.Controller.CustomerController.#ctor(MyProjectsNew.Data.DataContext)">
+            <summary>
+            Constructor
+            </summary>
+            <returns>Constructor for CustomerController</returns>
+        </member>
         <member name="M:MyProjectsNew.Controller.CustomerController.GetAllPersonnel">
             <summary>
             Get the Customers Name and Show it Here
             </summary>
             <returns>if succeed return Customers names</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.CreateCustomerName(MyProjectsNew.Entities.CustomerPersonnelNames)">
+            <summary>
+            Post the Customers Name and Show it Here
+            </summary>
+            <returns>CreateCustomerName</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.UpdateCustomerName(MyProjectsNew.Entities.CustomerPersonnelNames)">
+            <summary>
+            Update the Customers Name and Show it Here
+            </summary>
+            <returns>UpdateCustomerName</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.DeleteCustomerName(System.Int64)">
+            <summary>
+            Delete the Customers Name and Show it Here
+            </summary>
+            <returns>DeleteCustomerName</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.#ctor(MyProjectsNew.Data.DataContext)">
+            <summary>
+            Constructor
+            </summary>
+            <returns>Constructor for GoodsController</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.GetGoodsName">
+            <summary>
+            Get the Goods Name and Show it Here
+            </summary>
+            <returns>if succeed return Goods names</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.CreateGoodsName(MyProjectsNew.Entities.GoodsName)">
+            <summary>
+            Post the Goods and Show it Here
+            </summary>
+            <returns>CreateCustomerName</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.UpdateGoodsName(MyProjectsNew.Entities.GoodsName)">
+            <summary>
+            Update the Goods and Show it Here
+            </summary>
+            <returns>UpdateGoodsName</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.DeleteGoodsName(System.Int64)">
+            <summary>
+            Delete the Goods and Show it Here
+            </summary>
+            <returns>DeleteGoodsName</returns>
         </member>
         <member name="T:Program">
             <summary>

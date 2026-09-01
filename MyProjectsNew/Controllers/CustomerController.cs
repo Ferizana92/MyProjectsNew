@@ -15,7 +15,10 @@ namespace MyProjectsNew.Controller
     {
 
         private readonly DataContext _db;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <returns>Constructor for CustomerController</returns>
         public CustomerController(DataContext db)
         {
             _db = db;
@@ -26,7 +29,7 @@ namespace MyProjectsNew.Controller
         /// </summary>
         /// <returns>if succeed return Customers names</returns>
         [HttpGet]
-        [Route("{id}")]
+        [Route("GetAllCustomer")]
         public async Task<ActionResult<List<CustomerName>>> GetAllPersonnel()
         {
 
@@ -35,9 +38,12 @@ namespace MyProjectsNew.Controller
 
         }
 
-
+        /// <summary>
+        /// Post the Customers Name and Show it Here
+        /// </summary>
+        /// <returns>CreateCustomerName</returns>
         [HttpPost]
-        [Route("{id}")]
+        [Route("CreateCustomerName")]
 
         public async Task<ActionResult<List<CustomerPersonnelNames>>> CreateCustomerName([FromBody] CustomerPersonnelNames CustomerNameModel)
         {
@@ -53,8 +59,12 @@ namespace MyProjectsNew.Controller
 
 
         }
+        /// <summary>
+        /// Update the Customers Name and Show it Here
+        /// </summary>
+        /// <returns>UpdateCustomerName</returns>
         [HttpPut]
-        [Route("{id}")]
+        [Route("UpdateCustomerName")]
         public async Task<ActionResult<List<CustomerPersonnelNames>>> UpdateCustomerName([FromBody] CustomerPersonnelNames CustomerNameModel)
         {
             var command = new CustomerPersonnelNames
@@ -68,7 +78,10 @@ namespace MyProjectsNew.Controller
             return Ok(command);
 
         }
-
+        /// <summary>
+        /// Delete the Customers Name and Show it Here
+        /// </summary>
+        /// <returns>DeleteCustomerName</returns>
         [HttpDelete]
         public async Task<ActionResult<List<CustomerPersonnelNames>>> DeleteCustomerName([FromRoute][Required] long id) //yani chi Required?
         {
