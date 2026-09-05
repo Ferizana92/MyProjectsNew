@@ -1,5 +1,7 @@
-.vs/
+# Visual Studio / .NET build output
 bin/
 obj/
-*.user
-*.suo
+Debug/
+Release/
+**/bin/
+**/obj/
