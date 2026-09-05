@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyProjectsNew.Contracts;
+using MyProjectsNew.Controllers;
 using MyProjectsNew.Data;
 using MyProjectsNew.Entities;
 using System.ComponentModel.DataAnnotations;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MyProjectsNew.Controller
     {
@@ -37,6 +39,20 @@ namespace MyProjectsNew.Controller
             return Ok(personnelname);
 
         }
+
+        /// <summary>
+        /// Get the Customers Name and Show it Here
+        /// </summary>
+        /// <returns>if succeed return Customers names</returns>
+        /// 
+        //[HttpGet]
+        //[Route("GetAllCustomerById")]
+        //public async Task<GetAllCustomerById> GetAllCustomerById()
+        //
+        //{ var getById = await _db.CustomerPersonnelNames.ToListAsync();
+        //
+        //}
+        //return Ok(getById);
 
         /// <summary>
         /// Post the Customers Name and Show it Here
