@@ -1,4 +1,4 @@
-﻿namespace MyProjectsNew.Controllers
+﻿namespace MyProjectsNew.Contracts
 {
     public class GetAllCustomerById
     {
