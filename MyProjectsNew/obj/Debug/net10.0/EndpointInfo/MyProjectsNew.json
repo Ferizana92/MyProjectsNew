@@ -5,22 +5,12 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Customer/{id}": {
+    "/api/Customer/GetAllCustomer": {
       "get": {
         "tags": [
           "Customer"
         ],
         "summary": "Get the Customers Name and Show it Here",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -52,21 +42,55 @@
             }
           }
         }
-      },
-      "post": {
+      }
+    },
+    "/api/Customer/GetCustomerById/{id}": {
+      "get": {
         "tags": [
           "Customer"
         ],
+        "summary": "Get the Customers Name and Show it Here",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllCustomerById"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllCustomerById"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAllCustomerById"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/CreateCustomerName": {
+      "post": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Post the Customers Name and Show it Here",
         "requestBody": {
           "content": {
             "application/json": {
@@ -117,21 +141,14 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Customer/UpdateCustomerName": {
       "put": {
         "tags": [
           "Customer"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "Update the Customers Name and Show it Here",
         "requestBody": {
           "content": {
             "application/json": {
@@ -189,6 +206,7 @@
         "tags": [
           "Customer"
         ],
+        "summary": "Delete the Customers Name and Show it Here",
         "parameters": [
           {
             "name": "id",
@@ -233,21 +251,12 @@
         }
       }
     },
-    "/api/Goods/{id}/getGoodsName": {
+    "/api/Goods/getGoodsName": {
       "get": {
         "tags": [
           "Goods"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "Get the Goods Name and Show it Here",
         "responses": {
           "200": {
             "description": "OK",
@@ -281,21 +290,12 @@
         }
       }
     },
-    "/api/Goods/{id}": {
+    "/api/Goods/CreateGoodsName": {
       "post": {
         "tags": [
           "Goods"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "Post the Goods and Show it Here",
         "requestBody": {
           "content": {
             "application/json": {
@@ -323,7 +323,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               },
@@ -331,7 +331,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               },
@@ -339,28 +339,21 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/Goods/UpdateGoodsName": {
       "put": {
         "tags": [
           "Goods"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "summary": "Update the Goods and Show it Here",
         "requestBody": {
           "content": {
             "application/json": {
@@ -388,7 +381,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               },
@@ -396,7 +389,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               },
@@ -404,7 +397,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/CustomerPersonnelNames"
+                    "$ref": "#/components/schemas/GoodsName"
                   }
                 }
               }
@@ -418,6 +411,7 @@
         "tags": [
           "Goods"
         ],
+        "summary": "Delete the Goods and Show it Here",
         "parameters": [
           {
             "name": "id",
@@ -524,6 +518,29 @@
           }
         },
         "additionalProperties": false
+      },
+      "GetAllCustomerById": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "entity GetAllCustomerById"
       },
       "Goods": {
         "type": "object",

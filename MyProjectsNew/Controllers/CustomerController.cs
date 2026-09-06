@@ -45,14 +45,20 @@ namespace MyProjectsNew.Controller
         /// </summary>
         /// <returns>if succeed return Customers names</returns>
         /// 
-        //[HttpGet]
-        //[Route("GetAllCustomerById")]
-        //public async Task<GetAllCustomerById> GetAllCustomerById()
-        //
-        //{ var getById = await _db.CustomerPersonnelNames.ToListAsync();
-        //
-        //}
-        //return Ok(getById);
+        [HttpGet]
+        [Route("GetCustomerById/{id}")]
+        public async Task<GetAllCustomerById?> GetCustomerById(int id)
+        {
+            var customer = await _db.CustomerPersonnelNames
+                .Where(x => x.Id == id)
+                .Select(x => new GetAllCustomerById
+                {
+                    Id = x.Id,
+                })
+                .FirstOrDefaultAsync();
+
+            return customer;
+        }
 
         /// <summary>
         /// Post the Customers Name and Show it Here
