@@ -47,14 +47,10 @@ namespace MyProjectsNew.Controller
         /// 
         [HttpGet]
         [Route("GetCustomerById/{id}")]
-        public async Task<GetAllCustomerById?> GetCustomerById(int id)
+        public async Task<CustomerName> GetCustomerById(int id)
         {
-            var customer = await _db.CustomerPersonnelNames
-                .Where(x => x.Id == id)
-                .Select(x => new GetAllCustomerById
-                {
-                    Id = x.Id,
-                })
+            var customer = await _db.CustomerName
+                .Where(x => x.Code == id)
                 .FirstOrDefaultAsync();
 
             return customer;

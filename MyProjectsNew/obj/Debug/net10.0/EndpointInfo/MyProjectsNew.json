@@ -67,17 +67,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAllCustomerById"
+                  "$ref": "#/components/schemas/CustomerName"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAllCustomerById"
+                  "$ref": "#/components/schemas/CustomerName"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetAllCustomerById"
+                  "$ref": "#/components/schemas/CustomerName"
                 }
               }
             }
@@ -518,29 +518,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "GetAllCustomerById": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "entity GetAllCustomerById"
       },
       "Goods": {
         "type": "object",

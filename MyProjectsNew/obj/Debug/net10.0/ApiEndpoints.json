@@ -87,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MyProjectsNew.Contracts.GetAllCustomerById",
+        "Type": "MyProjectsNew.Entities.CustomerName",
         "MediaTypes": [
           "text/plain",
           "application/json",
