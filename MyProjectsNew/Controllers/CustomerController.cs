@@ -96,7 +96,7 @@ namespace MyProjectsNew.Controller
             {
                 return NotFound("Customer not found.");
             }
-
+            customer.Code = CustomerNameModel.Code;
             customer.FirstName = CustomerNameModel.FirstName;
             customer.LastName = CustomerNameModel.LastName;
             customer.Description = CustomerNameModel.Description;
