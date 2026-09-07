@@ -15,7 +15,7 @@ namespace MyProjectsNew.Data
         public DbSet<Entities.CustomerName> CustomerName { get; set; }
         public DbSet<Entities.CustomerPersonnelNames> CustomerPersonnelNames { get; set; }
         public DbSet<Entities.Goods> Goods { get; set; }
-
+        public DbSet<Entities.GoodsName> GoodsName { get; set; }
 
     }
 }

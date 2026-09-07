@@ -27,10 +27,26 @@ namespace MyProjectsNew.Controllers
         /// <returns>if succeed return Goods names</returns>
         [HttpGet]
         [Route("getGoodsName")]
-        public async Task<ActionResult<List<Goods>>> GetGoodsName()
+        public async Task<ActionResult<List<GoodsName>>> GetGoodsName()
         {
-            var Goodsname = await _db.Goods.ToListAsync();
+            var Goodsname = await _db.GoodsName.ToListAsync();
             return Ok(Goodsname);
+        }
+
+
+        /// <summary>
+        /// Get the Goods by id and Show it Here
+        /// </summary>
+        /// <returns>if succeed return Goods names</returns>
+        [HttpGet]
+        [Route("getGoodsNameById/{id}")]
+        public async Task<ActionResult<GoodsName>> GetGoodsNameById(int id)
+        {
+            var GoodsName = await _db.GoodsName
+                .Where(x => x.Code == id)
+                .FirstOrDefaultAsync();
+
+            return GoodsName;
         }
         /// <summary>
         /// Post the Goods and Show it Here
@@ -50,7 +66,9 @@ namespace MyProjectsNew.Controllers
                 Name = GoodsNameModel.Name
 
             };
-            await _db.AddRangeAsync();
+            _db.GoodsName.Add(command);
+            await _db.SaveChangesAsync();
+
             return Ok(command);
 
 
@@ -61,30 +79,44 @@ namespace MyProjectsNew.Controllers
         /// <returns>UpdateGoodsName</returns>
         [HttpPut]
         [Route("UpdateGoodsName")]
-        public async Task<ActionResult<List<GoodsName>>> UpdateGoodsName([FromBody] GoodsName GoodsNameModel)
+        public async Task<ActionResult<GoodsName>> UpdateGoodsName([FromBody] GoodsName GoodsNameModel)
         {
-            var command = new GoodsName
-            {
-                GoodsPrice = GoodsNameModel.GoodsPrice,
-                CustomerGoodsName = GoodsNameModel.CustomerGoodsName,
-                Code = GoodsNameModel.Code,
-                GoodsCount = GoodsNameModel.GoodsCount,
-                Name = GoodsNameModel.Name
-            };
-            await _db.AddAsync(command);
-            return Ok(command);
+            var goodsName = await _db.GoodsName
+                .FirstOrDefaultAsync(x => x.Code == GoodsNameModel.Code);
 
+            if (goodsName == null)
+            {
+                return NotFound("GoodsName not found.");
+            }
+
+            goodsName.Name = GoodsNameModel.Name;
+            goodsName.CustomerGoodsName = GoodsNameModel.CustomerGoodsName;
+            goodsName.GoodsCount = GoodsNameModel.GoodsCount;
+            goodsName.GoodsPrice = GoodsNameModel.GoodsPrice;
+
+            await _db.SaveChangesAsync();
+
+            return Ok(goodsName);
         }
         /// <summary>
         /// Delete the Goods and Show it Here
         /// </summary>
         /// <returns>DeleteGoodsName</returns>
-        [HttpDelete]
-        public async Task<ActionResult<List<GoodsName>>> DeleteGoodsName([FromRoute][Required] long id) //yani chi Required?
-        {
-            var deleteCommand = new DeleteGoodsNameCommand { Id = id };
 
-            return Ok(deleteCommand);
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteGoodsName(int id)
+        {
+            var goodsName = await _db.GoodsName.Where(x=> x.Code == id)
+                .FirstOrDefaultAsync();
+
+            if (goodsName == null)
+                return NotFound();
+
+            _db.GoodsName.Remove(goodsName);
+
+            await _db.SaveChangesAsync();
+
+            return Ok();
         }
     }
 }

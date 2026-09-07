@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace MyProjectsNew.Controller
-    {
+{
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
@@ -57,26 +57,30 @@ namespace MyProjectsNew.Controller
         }
 
         /// <summary>
-        /// Post the Customers Name and Show it Here
+        /// Post the Customers Name and save in db
         /// </summary>
         /// <returns>CreateCustomerName</returns>
         [HttpPost]
         [Route("CreateCustomerName")]
-
-        public async Task<ActionResult<List<CustomerPersonnelNames>>> CreateCustomerName([FromBody] CustomerPersonnelNames CustomerNameModel)
+        public async Task<ActionResult<CustomerPersonnelNames>> CreateCustomerName([FromBody] CustomerPersonnelNames customerNameModel)
         {
             var command = new CustomerPersonnelNames
-            {
-                FirstName = CustomerNameModel.FirstName,
-                LastName = CustomerNameModel.LastName,
-                Description = CustomerNameModel.Description,
-                Email = CustomerNameModel.Email
+
+            {  
+                Id = customerNameModel.Id,
+                Code = customerNameModel.Code,
+                FirstName = customerNameModel.FirstName,
+                LastName = customerNameModel.LastName,
+                Description = customerNameModel.Description,
+                Email = customerNameModel.Email
             };
-            await _db.AddRangeAsync();
+
+            _db.CustomerPersonnelNames.Add(command);
+            await _db.SaveChangesAsync();
+
             return Ok(command);
-
-
         }
+
         /// <summary>
         /// Update the Customers Name and Show it Here
         /// </summary>
@@ -100,12 +104,20 @@ namespace MyProjectsNew.Controller
         /// Delete the Customers Name and Show it Here
         /// </summary>
         /// <returns>DeleteCustomerName</returns>
-        [HttpDelete]
-        public async Task<ActionResult<List<CustomerPersonnelNames>>> DeleteCustomerName([FromRoute][Required] long id) //yani chi Required?
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCustomerName(int id)
         {
-            var deleteCommand = new DeleteCustomerGroupCommand { Id = id };
-           
-            return Ok(deleteCommand);
+            var CustomerPersonnelNames = await _db.CustomerPersonnelNames.Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (CustomerPersonnelNames == null)
+                return NotFound();
+
+            _db.CustomerPersonnelNames.Remove(CustomerPersonnelNames);
+
+            await _db.SaveChangesAsync();
+
+            return Ok();
         }
     }
 }

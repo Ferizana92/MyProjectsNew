@@ -32,7 +32,7 @@
         </member>
         <member name="M:MyProjectsNew.Controller.CustomerController.CreateCustomerName(MyProjectsNew.Entities.CustomerPersonnelNames)">
             <summary>
-            Post the Customers Name and Show it Here
+            Post the Customers Name and save in db
             </summary>
             <returns>CreateCustomerName</returns>
         </member>
@@ -42,7 +42,7 @@
             </summary>
             <returns>UpdateCustomerName</returns>
         </member>
-        <member name="M:MyProjectsNew.Controller.CustomerController.DeleteCustomerName(System.Int64)">
+        <member name="M:MyProjectsNew.Controller.CustomerController.DeleteCustomerName(System.Int32)">
             <summary>
             Delete the Customers Name and Show it Here
             </summary>
@@ -60,6 +60,12 @@
             </summary>
             <returns>if succeed return Goods names</returns>
         </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.GetGoodsNameById(System.Int32)">
+            <summary>
+            Get the Goods by id and Show it Here
+            </summary>
+            <returns>if succeed return Goods names</returns>
+        </member>
         <member name="M:MyProjectsNew.Controllers.GoodsController.CreateGoodsName(MyProjectsNew.Entities.GoodsName)">
             <summary>
             Post the Goods and Show it Here
@@ -72,7 +78,7 @@
             </summary>
             <returns>UpdateGoodsName</returns>
         </member>
-        <member name="M:MyProjectsNew.Controllers.GoodsController.DeleteGoodsName(System.Int64)">
+        <member name="M:MyProjectsNew.Controllers.GoodsController.DeleteGoodsName(System.Int32)">
             <summary>
             Delete the Goods and Show it Here
             </summary>
