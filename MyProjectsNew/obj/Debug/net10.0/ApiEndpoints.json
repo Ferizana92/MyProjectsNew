@@ -103,7 +103,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.CustomerPersonnelNames, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "MyProjectsNew.Entities.CustomerPersonnelNames",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -87,18 +87,24 @@ namespace MyProjectsNew.Controller
         /// <returns>UpdateCustomerName</returns>
         [HttpPut]
         [Route("UpdateCustomerName")]
-        public async Task<ActionResult<List<CustomerPersonnelNames>>> UpdateCustomerName([FromBody] CustomerPersonnelNames CustomerNameModel)
+        public async Task<ActionResult<CustomerPersonnelNames>> UpdateCustomerName([FromBody] CustomerPersonnelNames CustomerNameModel)
         {
-            var command = new CustomerPersonnelNames
-            {
-                FirstName = CustomerNameModel.FirstName,
-                LastName = CustomerNameModel.LastName,
-                Description = CustomerNameModel.Description,
-                Email = CustomerNameModel.Email
-            };
-            await _db.AddAsync(command);
-            return Ok(command);
+            var customer = await _db.CustomerPersonnelNames
+                .FirstOrDefaultAsync(x => x.Id == CustomerNameModel.Id);
 
+            if (customer == null)
+            {
+                return NotFound("Customer not found.");
+            }
+
+            customer.FirstName = CustomerNameModel.FirstName;
+            customer.LastName = CustomerNameModel.LastName;
+            customer.Description = CustomerNameModel.Description;
+            customer.Email = CustomerNameModel.Email;
+
+            await _db.SaveChangesAsync();
+
+            return Ok(customer);
         }
         /// <summary>
         /// Delete the Customers Name and Show it Here
