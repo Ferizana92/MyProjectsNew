@@ -85,6 +85,34 @@ namespace MyProjectsNew.Controller
         }
 
         /// <summary>
+        /// Get the CustomerName by name and email and Show it Here
+        /// </summary>
+        /// <returns>if succeed return CustomerName </returns>
+        [HttpGet]
+        [Route("getCustomerName")]
+        public async Task<ActionResult<List<CustomerName>>> GetCustomerName(string? name,string? email)
+        {
+            var query = _db.CustomerName.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(x =>
+                    x.FirstName.Contains(name.Trim()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                query = query.Where(x =>
+                    x.Email.Contains(email.Trim()));
+            }
+
+            var customerNames = await query.ToListAsync();
+
+            return customerNames;
+        }
+
+
+        /// <summary>
         /// Post the Customers Name and save in db
         /// </summary>
         /// <returns>CreateCustomerName</returns>

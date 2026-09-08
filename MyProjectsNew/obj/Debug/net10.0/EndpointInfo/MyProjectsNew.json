@@ -183,6 +183,61 @@
         }
       }
     },
+    "/api/Customer/getCustomerName": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get the CustomerName by name and email and Show it Here",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Customer/CreateCustomerName": {
       "post": {
         "tags": [

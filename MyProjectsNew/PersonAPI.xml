@@ -42,6 +42,12 @@
             </summary>
             <returns>if succeed return CustomerName </returns>
         </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.GetCustomerName(System.String,System.String)">
+            <summary>
+            Get the CustomerName by name and email and Show it Here
+            </summary>
+            <returns>if succeed return CustomerName </returns>
+        </member>
         <member name="M:MyProjectsNew.Controller.CustomerController.CreateCustomerName(MyProjectsNew.Entities.CustomerPersonnelNames)">
             <summary>
             Post the Customers Name and save in db
