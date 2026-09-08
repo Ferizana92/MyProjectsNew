@@ -48,6 +48,21 @@ namespace MyProjectsNew.Controllers
 
             return GoodsName;
         }
+
+        /// <summary>
+        /// Get the Goods by name and Show it Here
+        /// </summary>
+        /// <returns>if succeed return Goods names</returns>
+        [HttpGet]
+        [Route("getGoodsNameByName/{name}")]
+        public async Task<ActionResult<List<GoodsName>>> GetGoodsNameByName(string name)
+        {
+            var goodsNames = await _db.GoodsName
+                .Where(x => x.Name.Contains(name))
+                .ToListAsync();
+
+            return goodsNames;
+        }
         /// <summary>
         /// Post the Goods and Show it Here
         /// </summary>

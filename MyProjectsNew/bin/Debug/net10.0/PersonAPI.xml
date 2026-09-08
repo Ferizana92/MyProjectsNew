@@ -25,10 +25,22 @@
         </member>
         <member name="M:MyProjectsNew.Controller.CustomerController.GetCustomerById(System.Int32)">
             <summary>
-            Get the Customers Name and Show it Here
+            Get the Customers id and Show it Here
             </summary>
             <returns>if succeed return Customers names</returns>
             
+        </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.GetCustomerNameByName(System.String)">
+            <summary>
+            Get the CustomerName by name and Show it Here
+            </summary>
+            <returns>if succeed return CustomerName </returns>
+        </member>
+        <member name="M:MyProjectsNew.Controller.CustomerController.GetCustomerNameByEmail(System.String)">
+            <summary>
+            Get the CustomerName by email and Show it Here
+            </summary>
+            <returns>if succeed return CustomerName </returns>
         </member>
         <member name="M:MyProjectsNew.Controller.CustomerController.CreateCustomerName(MyProjectsNew.Entities.CustomerPersonnelNames)">
             <summary>
@@ -63,6 +75,12 @@
         <member name="M:MyProjectsNew.Controllers.GoodsController.GetGoodsNameById(System.Int32)">
             <summary>
             Get the Goods by id and Show it Here
+            </summary>
+            <returns>if succeed return Goods names</returns>
+        </member>
+        <member name="M:MyProjectsNew.Controllers.GoodsController.GetGoodsNameByName(System.String)">
+            <summary>
+            Get the Goods by name and Show it Here
             </summary>
             <returns>if succeed return Goods names</returns>
         </member>

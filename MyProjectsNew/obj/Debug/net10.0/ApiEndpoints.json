@@ -89,6 +89,58 @@
   },
   {
     "ContainingType": "MyProjectsNew.Controller.CustomerController",
+    "Method": "GetCustomerNameByEmail",
+    "RelativePath": "api/Customer/getGoodsNameByEmail/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.CustomerName, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyProjectsNew.Controller.CustomerController",
+    "Method": "GetCustomerNameByName",
+    "RelativePath": "api/Customer/getGoodsNameByName/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.CustomerName, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyProjectsNew.Controller.CustomerController",
     "Method": "UpdateCustomerName",
     "RelativePath": "api/Customer/UpdateCustomerName",
     "HttpMethod": "PUT",
@@ -192,6 +244,32 @@
     "ReturnTypes": [
       {
         "Type": "MyProjectsNew.Entities.GoodsName",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MyProjectsNew.Controllers.GoodsController",
+    "Method": "GetGoodsNameByName",
+    "RelativePath": "api/Goods/getGoodsNameByName/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MyProjectsNew.Entities.GoodsName, MyProjectsNew, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

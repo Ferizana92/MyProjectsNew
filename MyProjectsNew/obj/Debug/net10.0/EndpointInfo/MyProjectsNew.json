@@ -49,7 +49,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Get the Customers Name and Show it Here",
+        "summary": "Get the Customers id and Show it Here",
         "parameters": [
           {
             "name": "id",
@@ -78,6 +78,104 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CustomerName"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/getGoodsNameByName/{name}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get the CustomerName by name and Show it Here",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Customer/getGoodsNameByEmail/{email}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get the CustomerName by email and Show it Here",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CustomerName"
+                  }
                 }
               }
             }
@@ -280,6 +378,55 @@
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GoodsName"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Goods/getGoodsNameByName/{name}": {
+      "get": {
+        "tags": [
+          "Goods"
+        ],
+        "summary": "Get the Goods by name and Show it Here",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GoodsName"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GoodsName"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GoodsName"
+                  }
                 }
               }
             }

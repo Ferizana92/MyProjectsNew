@@ -41,7 +41,7 @@ namespace MyProjectsNew.Controller
         }
 
         /// <summary>
-        /// Get the Customers Name and Show it Here
+        /// Get the Customers id and Show it Here
         /// </summary>
         /// <returns>if succeed return Customers names</returns>
         /// 
@@ -54,6 +54,34 @@ namespace MyProjectsNew.Controller
                 .FirstOrDefaultAsync();
 
             return customer;
+        }
+        /// <summary>
+        /// Get the CustomerName by name and Show it Here
+        /// </summary>
+        /// <returns>if succeed return CustomerName </returns>
+        [HttpGet]
+        [Route("getGoodsNameByName/{name}")]
+        public async Task<ActionResult<List<CustomerName>>> GetCustomerNameByName(string name)
+        {
+            var CustomerName = await _db.CustomerName
+                .Where(x => x.FirstName.Contains(name))
+                .ToListAsync();
+
+            return CustomerName;
+        }
+        /// <summary>
+        /// Get the CustomerName by email and Show it Here
+        /// </summary>
+        /// <returns>if succeed return CustomerName </returns>
+        [HttpGet]
+        [Route("getGoodsNameByEmail/{email}")]
+        public async Task<ActionResult<List<CustomerName>>> GetCustomerNameByEmail(string email)
+        {
+            var CustomerName = await _db.CustomerName
+                .Where(x => x.Email.Contains(email))
+                .ToListAsync();
+
+            return CustomerName;
         }
 
         /// <summary>
