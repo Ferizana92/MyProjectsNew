@@ -78,7 +78,8 @@ namespace MyProjectsNew.Controllers
                 CustomerGoodsName = GoodsNameModel.CustomerGoodsName,
                 Code = GoodsNameModel.Code,
                 GoodsCount = GoodsNameModel.GoodsCount,
-                Name = GoodsNameModel.Name
+                Name = GoodsNameModel.Name,
+                Type = GoodsNameModel.Type,
 
             };
             _db.GoodsName.Add(command);
@@ -108,6 +109,7 @@ namespace MyProjectsNew.Controllers
             goodsName.CustomerGoodsName = GoodsNameModel.CustomerGoodsName;
             goodsName.GoodsCount = GoodsNameModel.GoodsCount;
             goodsName.GoodsPrice = GoodsNameModel.GoodsPrice;
+            goodsName.Type = GoodsNameModel.Type;
             await _db.SaveChangesAsync();
 
             return Ok(goodsName);

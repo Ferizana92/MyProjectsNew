@@ -128,7 +128,8 @@ namespace MyProjectsNew.Controller
                 FirstName = customerNameModel.FirstName,
                 LastName = customerNameModel.LastName,
                 Description = customerNameModel.Description,
-                Email = customerNameModel.Email
+                Email = customerNameModel.Email,
+                Type = customerNameModel.Type
             };
 
             _db.CustomerPersonnelNames.Add(command);
@@ -157,6 +158,7 @@ namespace MyProjectsNew.Controller
             customer.LastName = CustomerNameModel.LastName;
             customer.Description = CustomerNameModel.Description;
             customer.Email = CustomerNameModel.Email;
+            customer.Type = CustomerNameModel.Type;
 
             await _db.SaveChangesAsync();
 
