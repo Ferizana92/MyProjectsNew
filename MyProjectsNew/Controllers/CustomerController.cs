@@ -163,7 +163,7 @@ namespace MyProjectsNew.Controller
             return Ok(customer);
         }
         /// <summary>
-        /// Delete the Customers Name and Show it Here
+        /// Delete the Customers with Id and Show it Here
         /// </summary>
         /// <returns>DeleteCustomerName</returns>
         [HttpDelete("{id}")]

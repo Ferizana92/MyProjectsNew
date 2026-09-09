@@ -108,7 +108,6 @@ namespace MyProjectsNew.Controllers
             goodsName.CustomerGoodsName = GoodsNameModel.CustomerGoodsName;
             goodsName.GoodsCount = GoodsNameModel.GoodsCount;
             goodsName.GoodsPrice = GoodsNameModel.GoodsPrice;
-
             await _db.SaveChangesAsync();
 
             return Ok(goodsName);

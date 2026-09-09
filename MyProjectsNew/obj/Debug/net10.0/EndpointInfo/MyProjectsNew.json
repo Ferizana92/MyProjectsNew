@@ -341,7 +341,7 @@
         "tags": [
           "Customer"
         ],
-        "summary": "Delete the Customers Name and Show it Here",
+        "summary": "Delete the Customers with Id and Show it Here",
         "parameters": [
           {
             "name": "id",
@@ -649,6 +649,10 @@
           "email": {
             "type": "string",
             "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -703,6 +707,10 @@
             "nullable": true
           },
           "goodsPrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
             "type": "string",
             "nullable": true
           }

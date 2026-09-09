@@ -9,7 +9,8 @@ namespace MyProjectsNew.Entities
         public string Name { get; set; }
         public string CustomerGoodsName { get; set; }
         public string GoodsCount { get; set; } 
-        public string GoodsPrice { get; set; } 
+        public string GoodsPrice { get; set; }
+        public string Type { get; set; }
 
     }
 }
